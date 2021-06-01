@@ -11,7 +11,8 @@ public class Recuperatorio {
 	@Test
 	public void queSePuedaCrearUnObjetoVolador() {
 		Volador avion = new Avion(1, "A-10");
-	
+	    //El assertequals compara el primer double con el segundo doble, y el tercer double es hasta donde se permiten variaciones
+		//Para que el test de verdadero la altura del avion debe retornar un numero entre el primer doble y el limite de variaciones
 		assertEquals(0.0, avion.getAltura(), 0.01);
 	}
 	
@@ -62,7 +63,7 @@ public class Recuperatorio {
 		argentina.agregarVehiculo(new Destructor(11, "A-10"));
 		argentina.agregarVehiculo(new HidroAvion(12, "Mitsubishi F1M"));
 		argentina.agregarVehiculo(new Anfibio(12, "LARC-5"));
-		
+		// el test da verdadero ya que uno de los vehiculos agregados repite su id y la capacidad es de 12 y no 13.
 		assertEquals((Integer)12, argentina.getCapacidadDeDefensa());
 	}
 	
@@ -85,7 +86,7 @@ public class Recuperatorio {
 		argentina.agregarVehiculo(new Camion(7, "T-72"));
 		
 		argentina.crearBatalla("San Lorenzo", TipoDeBatalla.TERRESTRE, 100.5, 20.3);
-
+    //El assertrue verifica que el metodo enviar a la batalla de verdadero
 		assertTrue(argentina.enviarALaBatalla("San Lorenzo", 5));
 		assertTrue(argentina.enviarALaBatalla("San Lorenzo", 6));
 		assertTrue(argentina.enviarALaBatalla("San Lorenzo", 7));		

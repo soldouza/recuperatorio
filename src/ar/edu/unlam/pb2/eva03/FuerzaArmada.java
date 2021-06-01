@@ -71,22 +71,25 @@ public class FuerzaArmada {
 		}
 		if(unaBatalla != null && unVehiculo != null) {
 			if(unaBatalla.getTipo() == TipoDeBatalla.AEREA) {
-				if(Volador.class.isAssignableFrom(unVehiculo)) {
+				if(unVehiculo instanceof Volador) {
 					unaBatalla.agregarVehiculoALaBatalla(unVehiculo);
+					laEnvie = true;
 				}
 			}
 			if(unaBatalla.getTipo() == TipoDeBatalla.NAVAL) {
-				if(Acuatico.class.isAssignableFrom(unVehiculo)) {
+				if(unVehiculo instanceof Acuatico) {
 					unaBatalla.agregarVehiculoALaBatalla(unVehiculo);
+					laEnvie = true;
 				}
 			}
 			if(unaBatalla.getTipo() == TipoDeBatalla.TERRESTRE) {
-				if(Terrestre.class.isAssignableFrom(unVehiculo)) {
+				if(unVehiculo instanceof Terrestre) {
 					unaBatalla.agregarVehiculoALaBatalla(unVehiculo);
+					laEnvie = true;
 				}
 			}
 		}
-		return laEnvie = true;
+		return laEnvie;
 	} 
 
 }

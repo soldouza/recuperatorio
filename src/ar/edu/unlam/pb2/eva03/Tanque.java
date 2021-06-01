@@ -10,7 +10,7 @@ public class Tanque extends Vehiculo implements Terrestre{
 	@Override
 	public double getVelocidad() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 0.0;
 	}
 
 }
